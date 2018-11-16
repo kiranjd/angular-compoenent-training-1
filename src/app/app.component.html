@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+      <app-game-control (gameEvent)="getEventNumber($event)">
+      </app-game-control>
+  </div>
+  <div class="row">
+    <ng-container *ngIf="eventNumber">
+      <app-even *ngIf="eventNumber % 2 === 0" [eventNumber]="eventNumber"></app-even>
+      <app-odd *ngIf="eventNumber % 2 !==0" [eventNumber]="eventNumber"></app-odd>
+    </ng-container>
+  </div>
+</div>
