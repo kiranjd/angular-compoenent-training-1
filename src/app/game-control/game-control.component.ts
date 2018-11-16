@@ -16,10 +16,12 @@ export class GameControlComponent implements OnInit {
   }
 
   startGame() {
-    this.ref = setInterval(() => {
-      this.gameEvent.emit(++this.eventCount);
-      console.log(this.eventCount);
-    }, 1000);
+    if (!this.ref) {
+      this.ref = setInterval(() => {
+        this.gameEvent.emit(++this.eventCount);
+        console.log(this.eventCount);
+      }, 1000);
+    }
   }
 
   stopGame() {
