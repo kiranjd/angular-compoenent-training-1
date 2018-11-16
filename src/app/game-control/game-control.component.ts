@@ -20,7 +20,14 @@ export class GameControlComponent implements OnInit {
       this.ref = setInterval(() => {
         this.gameEvent.emit(++this.eventCount);
         console.log(this.eventCount);
-      }, 1000);
+      }, 500);
+    }
+
+    else {
+      this.ref = setInterval(() => {
+        this.gameEvent.emit(++this.eventCount);
+        console.log(this.eventCount);
+      }, 500);
     }
   }
 
